@@ -1,0 +1,13 @@
+#PBS -N MBCGeneCoexp06_clique_01
+#PBS -j oe
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=96:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/MBC fci ./datasets/GeneCoexp_MAFIA_06.dat 0.1 ./output/GeneCoexp_MAFIA_06_01.clique 1
+#

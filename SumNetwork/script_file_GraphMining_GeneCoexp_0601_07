@@ -1,0 +1,15 @@
+#PBS -q default
+#PBS -N GraphMining_GeneCoexp_0601_07
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=99:00:00
+#PBS -l pvmem=4GB
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/GraphMining -g 2 -d 0.7 -m 1 -p ./output/GeneCoexp_MAFIA_0601_07.output ./datasets/GeneCoexp.matrix ../MAFIA-MBC/output/GeneCoexp_MAFIA_06_01.clique 
+#

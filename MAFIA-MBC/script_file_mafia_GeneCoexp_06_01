@@ -1,0 +1,13 @@
+#PBS -N MGeneCoexp06_01
+#PBS -j oe
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=96:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/mafia -fci 0.001 -ascii ./datasets/GeneCoexp_MAFIA_06.dat ./datasets/freq_itemsets/GeneCoexp_MAFIA_06_0.1_fci.mafia
+#

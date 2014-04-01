@@ -1,0 +1,14 @@
+#PBS -q short
+#PBS -N MBCG2F005
+#PBS -j oe
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=2:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/MBC fci ./datasets/genes_to_phenotype.dat 0.05 ./output/g2p.biclique 0
+#

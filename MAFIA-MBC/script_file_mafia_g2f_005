@@ -1,0 +1,13 @@
+#PBS -N MG2F005
+#PBS -j oe
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=96:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/mafia -fci 0.0005 -ascii ./datasets/genes_to_phenotype.dat ./datasets/freq_itemsets/genes_to_phenotype_0.05_fci.mafia
+#

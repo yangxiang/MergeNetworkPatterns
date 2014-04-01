@@ -1,0 +1,14 @@
+#PBS -q default
+#PBS -N GraphMining_g2p_S_07_2nd
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=99:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+./bin/GraphMining -d 0.7 -b 45000 -p ./output/g2p_S_07_2nd.output ../MAFIA-MBC/datasets/genes_to_phenotype.dat ./output/g2p_S_07.output
+#
